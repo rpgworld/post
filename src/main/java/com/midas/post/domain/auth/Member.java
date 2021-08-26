@@ -1,5 +1,6 @@
 package com.midas.post.domain.auth;
 
+import com.midas.post.domain.BaseTimeEntity;
 import com.midas.post.domain.post.Post;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,7 +13,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @Getter
-public class Member {
+public class Member extends BaseTimeEntity {
 
     @Id @GeneratedValue
     @Column(name = "member_id")

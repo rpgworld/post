@@ -1,5 +1,6 @@
 package com.midas.post.domain.post;
 
+import com.midas.post.domain.BaseEntity;
 import com.midas.post.domain.auth.Member;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @ToString(of = {"title", "content"})
-public class Post {
+public class Post extends BaseEntity {
 
     @Id @GeneratedValue
     @Column(name = "post_id")
