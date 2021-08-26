@@ -35,4 +35,10 @@ public class Post {
         this.content = content;
         this.member = member;
     }
+
+    //== Update ==//
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
 }
