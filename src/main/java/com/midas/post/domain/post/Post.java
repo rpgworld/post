@@ -1,15 +1,17 @@
-package com.midas.post.domain.posts;
+package com.midas.post.domain.post;
 
 import com.midas.post.domain.auth.Member;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
 @Getter
+@ToString(of = {"title", "content"})
 public class Post {
 
     @Id @GeneratedValue

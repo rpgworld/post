@@ -1,6 +1,7 @@
 package com.midas.post.domain.auth;
 
-import com.midas.post.domain.posts.Post;
+import com.midas.post.domain.post.Post;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -20,6 +21,19 @@ public class Member {
     private String username;
     private String email;
 
-    @OneToMany(mappedBy = "post")
+    @OneToMany(mappedBy = "member")
     List<Post> posts = new ArrayList<>();
+
+    @Builder
+    public Member(String username, String email) {
+        this.username = username;
+        this.email = email;
+    }
+
+    @Builder
+    public Member(String username, String email, List<Post> posts) {
+        this.username = username;
+        this.email = email;
+        this.posts = posts;
+    }
 }
