@@ -25,7 +25,7 @@ public class PostService {
         Optional<Member> findMember = memberRepository.findById(requestDto.getMemberId());
 
         if (findMember.isEmpty()) {
-            throw new IllegalStateException("존재하지 않는 회원입니다. member_id: " + requestDto.getMemberId());
+            throw new IllegalStateException("존재하지 않는 회원입니다. id: " + requestDto.getMemberId());
         }
 
         return postRepository.save(requestDto.toEntity(findMember.get())).getId();
